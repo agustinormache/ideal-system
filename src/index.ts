@@ -9,17 +9,22 @@ const app = new Application({
 	height: 480
 });
 
-Loader.shared.add({url:"./joystick.jpg", name: "myJoystick"})
+// Carga previamente todas estas imagenes
+Loader.shared.add({url: "./dinosaurio.jpg", name: "MyDino"})
+Loader.shared.add({url: "./clampy.png", name: "Clampy"})
 
+// Ejecuta el render en el navegador una vez cargadas las imagenes
 Loader.shared.onComplete.add(()=>{
-	const clampy: Sprite = Sprite.from("joystick.jpg");
+	const clampy: Sprite = Sprite.from("MyDino");
 
-	console.log("Hola mundo",clampy.width, clampy.height)
+	console.log("Hola mundo", clampy.width, clampy.height)
 
-	//clampy.anchor.set(0.5);
+	// clampy.anchor.set(0.5);
 
 	clampy.x = 0;
 	clampy.y = 0;
 
 	app.stage.addChild(clampy);
 })
+
+Loader.shared.load()
