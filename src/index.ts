@@ -1,4 +1,6 @@
-import { Application, Sprite, Loader, Container} from 'pixi.js'
+import { Application, Loader} from 'pixi.js'
+import {assets} from './assets'
+import { Scene } from './Scene';
 
 const app = new Application({
 	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
@@ -33,42 +35,12 @@ window.dispatchEvent(new Event("resize"))
 
 
 // Carga previamente todas estas imagenes
-Loader.shared.add({url: "./dinosaurio.png", name: "MyDino"})
-Loader.shared.add({url: "./hat.png", name: "MyHat"})
-Loader.shared.add({url: "./baston.png", name: "MyWalkingStick"})
+Loader.shared.add(assets)
 
 // Ejecuta el render en el navegador una vez cargadas las imagenes
 Loader.shared.onComplete.add(()=>{
-	const dino: Sprite = Sprite.from("MyDino");
-	
-	const hat:Sprite=Sprite.from("MyHat");
-	hat.scale.set(0.2, 0.2)
-	hat.position.set(70,-50)
-
-	const stick: Sprite = Sprite.from("MyWalkingStick");
-	stick.rotation = 120;
-	stick.scale.set(0.7, 0.7)
-	stick.position.set(170,300)
-
-	const dinoWidthHat: Container = new Container();
-	dinoWidthHat.scale.set(0.5);
-	dinoWidthHat.x = 200;
-	dinoWidthHat.y = 300;
-
-	// console.log(hat.toGlobal(new Point()));
-	// console.log(hat.parent.toGlobal(hat.position));
-
-	//640 x 360
-	//const aux = hat.parent.toLocal(new Point(0,0));
-	//hat.position.x = aux.x;
-	//hat.position.y = aux.y;
-	
-
-	// El orden de los componentes indica si están delante o detrás
-	dinoWidthHat.addChild(stick);
-	dinoWidthHat.addChild(dino);
-	dinoWidthHat.addChild(hat);
-	app.stage.addChild(dinoWidthHat);
+	const myScene = new Scene();
+	app.stage.addChild(myScene)
 })
 
 Loader.shared.load()
