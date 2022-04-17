@@ -7,5 +7,14 @@ export const assets = [
     {url: "./rana-3.png", name: "FrogRun3"},
     {url: "./rana-4.png", name: "FrogRun4"},
     {url: "./rana-5.png", name: "FrogRun5"},
-    {url: "./ui/panel_blue.png", name: "Panel"}
+    {url: "./ui/panel-blue.png", name: "Panel"},
+    {url: "./ui/blue-sign.png", name: "MyBlueSign"},
+    {url: "./ui/green-sign.png", name: "MyGreenSign"},
+    {url: "./ui/red-sign.png", name: "MyRedSign"},
+    {url: "./ui/yellow-sign.png", name: "MyYellowSign"},
+    {url: "./ui/heart.png", name: "MyHeart"},
+    {url: "./ui/star.png", name: "MyStar"},
+    {url: "./ui/paper-panel.png", name: "MyPaperPanel"},
+    {url: "./ui/wood-panel.png", name: "MyWoodPanel"},
+    {url: "./ui/wood-header.png", name: "MyWoodHeader"}
 ]
